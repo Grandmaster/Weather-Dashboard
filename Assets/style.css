@@ -7,3 +7,7 @@
   width: 100vw;
   box-sizing: border-box;
 }
+.card {
+  background-color: blue;
+  color: white;
+}

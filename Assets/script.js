@@ -80,4 +80,5 @@ $("#search-form").on("submit", function(event) {
   event.preventDefault();
   var city = $("#city-search").val();
   getCityData(city);
+  console.log(moment("2020-03-17").format("MMMM Do YYYY"));
 });
