@@ -2,3 +2,8 @@
   background-color: rgb(48, 48, 56);
   color: white;
 }
+.container {
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+}
