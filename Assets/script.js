@@ -96,6 +96,8 @@ $("#search-form").on("submit", function(event) {
   var city = $("#city-search").val();
   getCityData(city);
   var buttonDiv = $("<div>").addClass("row");
-  buttonDiv.append($("<button>").text(city));
+  var buttonColumn = $("<div>").addClass("col-sm-12");
+  buttonColumn.append($("<button>").text(city));
+  buttonDiv.append(buttonColumn);
   $("#search").append(buttonDiv);
 });

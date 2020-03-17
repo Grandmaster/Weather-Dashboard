@@ -15,3 +15,6 @@
 .col-sm-2 {
   padding: 0;
 }
+div button:not(#search-button) {
+  width: 100%;
+}
