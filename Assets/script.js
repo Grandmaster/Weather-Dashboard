@@ -62,10 +62,18 @@ function displayCityWeather(response, uvResponse, forecastResponse) {
   for (let i of forecastResponse.list) {
     if (/12:00:00/.test(i.dt_txt)) {
       var forecastDiv = $("<div>").addClass("card");
+      var date = /^\d+-\d+-\d+/.exec(i.dt_txt)[0];
+      var formattedDate = moment(date).format("M/D/Y");
       forecastDiv.append(
         $("<h5>")
           .addClass("card-title")
-          .text("Option")
+          .text(formattedDate)
+      );
+      forecastDiv.append(
+        $("<img>").attr(
+          "src",
+          "http://openweathermap.org/img/wn/" + i.weather[0].icon + ".png"
+        )
       );
       var cardColumn = $("<div>").addClass("col-sm-2");
       cardColumn.append(forecastDiv);
