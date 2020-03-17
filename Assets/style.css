@@ -19,3 +19,7 @@ div button:not(#search-button) {
   width: 100%;
   border: 1px solid;
 }
+#city-data {
+  border: 0.5px solid lightgrey;
+  margin: 10px;
+}

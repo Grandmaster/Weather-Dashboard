@@ -4,6 +4,7 @@
 console.log("hello world");
 // Variables to store the relevant city data in local storage
 var weatherData = {};
+var cityArray = [];
 // function that gets relevant city data from the Openweather API
 function getCityData(city) {
   baseUrl = "https://api.openweathermap.org/data/2.5/weather?units=imperial&q=";
@@ -101,6 +102,7 @@ $("#search-form").on("submit", function(event) {
   );
   buttonDiv.append(buttonColumn);
   $("#search").append(buttonDiv);
-  weatherData = Object.assign(weatherData, { city: "searched" });
+  cityArray.push(city);
+  weatherData = Object.assign(weatherData, { "Weather Data": cityArray });
   console.log(weatherData);
 });
