@@ -2,10 +2,8 @@
 // =========================================================
 
 console.log("hello world");
-// Variables to store the relevant city data
-var globalWeatherResponse;
-var globalUvResponse;
-var globalForecastResponse;
+// Variables to store the relevant city data in local storage
+var weatherData = {};
 // function that gets relevant city data from the Openweather API
 function getCityData(city) {
   baseUrl = "https://api.openweathermap.org/data/2.5/weather?units=imperial&q=";
@@ -36,7 +34,6 @@ function getCityData(city) {
         method: "GET"
       }).then(function(uvResponse) {
         displayCityWeather(weatherResponse, uvResponse, forecastResponse);
-        console.log(forecastResponse);
       });
     });
   });
@@ -104,4 +101,6 @@ $("#search-form").on("submit", function(event) {
   );
   buttonDiv.append(buttonColumn);
   $("#search").append(buttonDiv);
+  weatherData = Object.assign(weatherData, { city: "searched" });
+  console.log(weatherData);
 });
