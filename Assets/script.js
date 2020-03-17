@@ -68,7 +68,9 @@ function displayCityWeather(response, uvResponse, forecastResponse) {
       var formattedDate = moment(date).format("M/D/Y");
       forecastDiv.append(
         $("<h5>")
-          .addClass("card-title")
+          .addClass(
+            "card-ti                                                                                                    tle"
+          )
           .text(formattedDate)
       );
       forecastDiv.append(
@@ -87,10 +89,13 @@ function displayCityWeather(response, uvResponse, forecastResponse) {
     }
   }
 }
-// Grabs the data for the city that is submitted in the form
+// Grabs the data for the city that is submitted in the form and displays it
+// to the page
 $("#search-form").on("submit", function(event) {
   event.preventDefault();
   var city = $("#city-search").val();
   getCityData(city);
-  console.log(moment("2020-03-17").format("MMMM Do YYYY"));
+  var buttonDiv = $("<div>").addClass("row");
+  buttonDiv.append($("<button>").text(city));
+  $("#search").append(buttonDiv);
 });
