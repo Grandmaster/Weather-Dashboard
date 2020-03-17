@@ -2,6 +2,8 @@
 // =========================================================
 
 console.log("hello world");
+// function that gets relevant city data from the Openweather API
+function getCityData(city) {}
 // function that displays weather data on the browser
 function displayCityWeather(response, uvResponse) {
   $("#city-data > p").remove();
