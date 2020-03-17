@@ -48,7 +48,7 @@ function displayCityWeather(response, uvResponse, forecastResponse) {
     "src",
     "http://openweathermap.org/img/wn/" + response.weather[0].icon + ".png"
   );
-  $("#city-name").text(response.name);
+  $("#city-name").text(response.name + " (" + moment().format("M/D/Y") + ")");
   $("#city-name").append(weatherIcon);
   var temp = $("<p>").text("Temperature: " + response.main.temp + "\xB0F");
   var humidity = $("<p>").text("Humidity: " + response.main.humidity + "%");
@@ -97,7 +97,11 @@ $("#search-form").on("submit", function(event) {
   getCityData(city);
   var buttonDiv = $("<div>").addClass("row");
   var buttonColumn = $("<div>").addClass("col-sm-12");
-  buttonColumn.append($("<button>").text(city));
+  buttonColumn.append(
+    $("<button>")
+      .addClass("btn btn-light")
+      .text(city)
+  );
   buttonDiv.append(buttonColumn);
   $("#search").append(buttonDiv);
 });
