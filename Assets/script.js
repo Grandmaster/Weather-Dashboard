@@ -58,8 +58,10 @@ function displayCityWeather(response, uvResponse, forecastResponse) {
   $("#city-data").append(humidity);
   $("#city-data").append(windSpeed);
   $("#city-data").append(uvIndex);
-  var arr = [];
+  // This part generates the cards
+  $("#forecast-list").empty();
   for (let i of forecastResponse.list) {
+    // Next line limits the # of results for each day
     if (/12:00:00/.test(i.dt_txt)) {
       var forecastDiv = $("<div>").addClass("card");
       var date = /^\d+-\d+-\d+/.exec(i.dt_txt)[0];
@@ -75,13 +77,15 @@ function displayCityWeather(response, uvResponse, forecastResponse) {
           "http://openweathermap.org/img/wn/" + i.weather[0].icon + ".png"
         )
       );
+      forecastDiv.append(
+        $("<p>").text("Temperature: " + i.main.temp + "\xB0F")
+      );
+      forecastDiv.append($("<p>").text("Humidity: " + i.main.humidity + "%"));
       var cardColumn = $("<div>").addClass("col-sm-2");
       cardColumn.append(forecastDiv);
       $("#forecast-list").append(cardColumn);
-      arr.push(i);
     }
   }
-  console.log(arr);
 }
 // Grabs the data for the city that is submitted in the form
 $("#search-form").on("submit", function(event) {
