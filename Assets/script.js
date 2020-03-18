@@ -7,12 +7,13 @@ console.log("hello world");
 var weatherData = JSON.parse(localStorage.getItem("Weather Data"));
 if (weatherData == null) {
   weatherData = {};
-  console.log("This ran!");
 } else if (weatherData !== null) {
   for (let i in weatherData) {
     createCityButton(i);
   }
-  console.log("That ran!");
+  var citiesSearched = Object.keys(weatherData);
+  var lastSearch = citiesSearched[citiesSearched.length - 1];
+  getCityData(lastSearch);
 }
 // function that gets relevant city data from the Openweather API
 function getCityData(city) {
