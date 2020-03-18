@@ -1,0 +1,33 @@
+.nav {
+  background-color: rgb(48, 48, 56);
+  color: white;
+}
+.container {
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+}
+.card {
+  background-color: blue;
+  color: white;
+  width: 100%;
+}
+.col-sm-2 {
+  padding: 0;
+}
+div button:not(#search-button) {
+  width: 100%;
+  border: 1px solid;
+}
+#city-data {
+  border: 0.5px solid lightgrey;
+  margin: 10px;
+  margin-bottom: 20px;
+}
+span {
+  padding: 5px;
+  color: white;
+}
+#search {
+  background-color: palegreen;
+}

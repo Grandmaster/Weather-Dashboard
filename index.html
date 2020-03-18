@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="Assets/style.css" />
+  </head>
+  <body>
+    <nav class="nav justify-content-center">
+      <h1>Weather Dashboard</h1>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4" id="search">
+          <form id="search-form">
+            <label for="city-search">
+              Search for a City:
+            </label>
+            <input id="city-search" />
+            <button class="btn btn-primary" id="search-button">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+        </div>
+        <div class="col-sm-8">
+          <div class="row">
+            <div class="col-sm rounded" id="city-data">
+              <h2 id="city-name">
+                Please search for a city's weather using the search bar.
+              </h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm">
+              <h3>5-Day Forecast:</h3>
+              <div class="row justify-content-around" id="forecast-list"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="Assets/script.js"></script>
+  </body>
+</html>
