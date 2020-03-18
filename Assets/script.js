@@ -51,13 +51,15 @@ function displayCityWeather(response, uvResponse, forecastResponse) {
   var temp = $("<p>").text("Temperature: " + response.main.temp + "\xB0F");
   var humidity = $("<p>").text("Humidity: " + response.main.humidity + "%");
   var windSpeed = $("<p>").text("Wind Speed: " + response.wind.speed + " MPH");
-  var uvSpan = $("<span>").text(uvResponse.value);
+  var uvSpan = $("<span>")
+    .text(uvResponse.value)
+    .addClass("rounded");
   if (uvResponse.value <= 3) {
     uvSpan.attr("style", "background-color: lightgreen");
   } else if (uvResponse.value > 3 && uvResponse.value <= 7) {
     uvSpan.attr("style", "background-color: lightsalmon");
   } else if (uvResponse.value > 7) {
-    uvSpan.attr("style", "background-color: lightred");
+    uvSpan.attr("style", "background-color: red");
   }
   var uvIndex = $("<p>")
     .text("UV Index: ")

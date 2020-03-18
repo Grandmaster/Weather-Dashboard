@@ -23,3 +23,7 @@ div button:not(#search-button) {
   border: 0.5px solid lightgrey;
   margin: 10px;
 }
+span {
+  padding: 10px;
+  color: white;
+}
