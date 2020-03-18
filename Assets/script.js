@@ -89,6 +89,8 @@ function displayCityWeather(response, uvResponse, forecastResponse) {
   $("#city-data").append(uvIndex);
   // This part generates the cards
   $("#forecast-list").empty();
+  $("#forecast > h3").remove();
+  $("#forecast").prepend($("<h3>").text("5-day forecast: "));
   for (let i of forecastResponse.list) {
     // Next line limits the # of results for each day
     if (/12:00:00/.test(i.dt_txt)) {
